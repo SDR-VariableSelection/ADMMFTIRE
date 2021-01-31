@@ -1,0 +1,12 @@
+README.md
+setup.py
+FTIRE/FT3.py
+FTIRE/SIR2.py
+FTIRE/SpCov.py
+FTIRE/__init__.py
+FTIRE/ftire.py
+FTIRE/genxy.py
+FTIRE_jweng.egg-info/PKG-INFO
+FTIRE_jweng.egg-info/SOURCES.txt
+FTIRE_jweng.egg-info/dependency_links.txt
+FTIRE_jweng.egg-info/top_level.txt
