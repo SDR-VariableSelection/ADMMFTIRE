@@ -10,6 +10,15 @@ import numpy as np
 import scipy.linalg as la
 
 def generateX(n, p, covstr):  
+    """
+    Generate X for simulation
+    Args:
+        n (int): sample size
+        p (int): dimension
+        covstr (0-3): covariance structure
+    Returns:
+        X: n times p array
+    """
     ## generate X 
     if covstr == 0:
         covx = np.eye(p)
