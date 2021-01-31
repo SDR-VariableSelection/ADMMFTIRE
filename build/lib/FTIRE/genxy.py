@@ -10,6 +10,15 @@ import numpy as np
 import scipy.linalg as la
 
 def generateX(n, p, covstr):  
+    """
+    Generate X for simulation
+    Args:
+        n (int): sample size
+        p (int): number of dimension of X
+        covstr (0-3): covariance structure
+    Returns:
+        X: n times p array
+    """
     ## generate X 
     if covstr == 0:
         covx = np.eye(p)
@@ -30,6 +39,17 @@ def generateX(n, p, covstr):
     return(X)
 
 def generateY(X, M):
+    """
+    Generate Y based on X
+    Args: 
+        X: input covariate
+        M: model 1-7 uni; 10-15 multi
+    Returns:
+        Y: outcome
+        d: structural dimension
+        p: the dimension of Y
+        b: the true beta
+    """
     [n,p] = X.shape
     ## generate Y      
     if M == 1: # Qian M1

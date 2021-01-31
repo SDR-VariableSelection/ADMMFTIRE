@@ -19,6 +19,14 @@ from SIR2 import SIR as sir
 from FT3 import FT as ft
 
 def projloss(B, b):
+    """
+    Projection Distance between B and b matrices
+    Args:
+        B: p times d matrix
+        b: p times d estimated matrix
+    Returns:
+        projection norm loss
+    """
     if np.linalg.cond(B) < 1/sys.float_info.epsilon and np.linalg.cond(b) < 1/sys.float_info.epsilon:
 #np.isfinite(np.linalg.cond(B)) and np.isfinite(np.linalg.cond(b)):
         loss = la.norm(B @ la.solve(B.T @ B, B.T) - b @ la.solve(b.T @ b, b.T), 2)
@@ -27,6 +35,14 @@ def projloss(B, b):
     return(loss)
 
 def corrloss(B, b, sigt = None, sigs = None):
+    """
+    distance correlation between B and b
+    Args: 
+        B: p times d matrix
+        b: p times d estimated matrix
+    Returns:
+        distance correlation
+    """
     if np.linalg.cond(B) < 1/sys.float_info.epsilon and np.linalg.cond(b) < 1/sys.float_info.epsilon: #np.isfinite(np.linalg.cond(B)) and np.isfinite(np.linalg.cond(b)):
         if sigt is None:
             p = b.shape[0]
@@ -52,6 +68,25 @@ def updateC(B, Ups):
 
 
 def estimate(X, y, d, m, lamb, method = "ft", NoB = 5, NoC = 20, NoW=2, spX=False, standard=False):
+    """
+    Estimate B
+    Args:
+        X: covariates
+        y: outcome
+        d: structural dimension
+        m: number of transfroms
+        lamb: regularization parameter
+        method: "ft" or "sir"
+        NoB: number of iterate over B within ADMM
+        NoC: number of iterate over C
+        NoW: number of updating weights
+        spX: sparse X or not
+        standard: standardize X or not
+    Returns:
+        B: estimate
+        covxx: covariance matrix of X
+        err2: differences between objective functions since last step
+    """
     
     ## init B, C, Ups
     [n,p] = X.shape
@@ -134,6 +169,27 @@ def estimate(X, y, d, m, lamb, method = "ft", NoB = 5, NoC = 20, NoW=2, spX=Fals
 
 # cross validation
 def CV(X, y, d, m, method="ft", nolamb = 50, nofold=10, NoB = 5, NoC = 20, NoW=2, spX=False, standard=False):  
+    """
+    Estimate B using the best lambda with cross-validation
+    Args:
+        X: covariates
+        y: outcome
+        d: structural dimension
+        m: number of transfroms
+        method: "ft" or "sir"
+        nolamb: the number of lambda
+        nofold: the number of fold
+        NoB: number of iterate over B within ADMM
+        NoC: number of iterate over C
+        NoW: number of updating weights
+        spX: sparse X or not
+        standard: standardize X or not
+    Returns:
+        B: estimate
+        covxx: covariance matrix of X
+        lambcv: best lambda
+        maximized loss 
+    """
     ## par.
     method = 'sir' # or 'ft'
     nofold = 10
