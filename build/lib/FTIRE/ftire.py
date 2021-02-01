@@ -6,17 +6,18 @@ Created on Thu Jan 28 10:11:34 2021
 @author: jiayingweng
 """
 
-
-import sys
-import dcor
 import numpy as np
 import scipy.linalg as la
+import sys
+import dcor
 from sklearn.model_selection import KFold # import KFold
+import FTIRE
 
+ft = FTIRE.FT.FT
+sir = FTIRE.SIR.SIR
 
-from SpCov import spcovCV
-from SIR2 import SIR as sir 
-from FT3 import FT as ft
+__all__ = ["estimate", "CV"]
+
 
 def projloss(B, b):
     """
@@ -100,7 +101,7 @@ def estimate(X, y, d, m, lamb, method = "ft", NoB = 5, NoC = 20, NoW=2, spX=Fals
     C = updateC(B, Ups)
     
     ## Covariance
-    covxx = spcovCV(X, standard = standard) if spX else np.cov(X.T)
+    covxx = FTIRE.SpCov.spcovCV(X, standard = standard) if spX else np.cov(X.T)
     ## initial weight
     weight = np.ones(p)
     

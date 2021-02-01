@@ -9,6 +9,8 @@ Created on Thu Jan 28 16:21:46 2021
 import numpy as np
 import scipy.linalg as la
 
+__all__ = ['generateX', 'generateY']
+
 def generateX(n, p, covstr):  
     """
     Generate X for simulation

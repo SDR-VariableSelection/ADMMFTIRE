@@ -6,14 +6,13 @@ Created on Thu Jul 23 21:53:32 2020
 @author: jiayingweng
 """
 
-
-
-#%%
-
 import numpy as np
 from scipy import stats
 import scipy.linalg as la
-from SpCov import spcovCV
+import FTIRE
+
+__all__ = ['FT']
+#%%
 
 class FT:
     """FT method to apply for X and Y"""
@@ -43,7 +42,7 @@ class FT:
         self.kernel()
         ## covariance matrix
         # n = self.X.shape[0]
-        covX = spcovCV(self.X) if self.spX else np.cov(self.X.T)
+        covX = FTIRE.SpCov.spcovCV(self.X) if self.spX else np.cov(self.X.T)
         ## SVD
         if p == 1:
             self.B = np.ones((p,d))
@@ -111,7 +110,7 @@ class FT:
         ## kernel matrix
         self.kernel()
         ## covariance matrix
-        covX = spcovCV(self.X) if self.spX else np.cov(self.X.T)
+        covX = FTIRE.SpCov.spcovCV(self.X) if self.spX else np.cov(self.X.T)
         ## SVD
         self.values, vectors = la.eigh(self.M, covX)
         ## Sequential Tests

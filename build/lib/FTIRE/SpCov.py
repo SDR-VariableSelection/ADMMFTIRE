@@ -5,10 +5,12 @@ Created on Mon Aug 24 01:24:00 2020
 
 @author: jiayingweng
 """
-import numpy as np
-from sklearn.model_selection import train_test_split
-import scipy.linalg as la
 
+import numpy as np
+import scipy.linalg as la
+from sklearn.model_selection import train_test_split
+
+__all__ = ['spcov', 'spcovCV']
 
 # covxx = np.cov(X.T)
 def spcov(covxx, lam, standard):    

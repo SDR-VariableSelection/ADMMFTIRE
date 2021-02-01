@@ -7,10 +7,11 @@ Created on Thu Jul 23 19:03:10 2020
 """
 
 import numpy as np
-import scipy.linalg as la
-#from scipy.linalg import eigh
 from scipy import stats
-from SpCov import spcovCV
+import scipy.linalg as la
+import FTIRE
+
+__all__ = ['SIR']
 
 class SIR:
     """SIR method to apply for X and Y"""
@@ -37,7 +38,7 @@ class SIR:
         self.kernel()
         ## covariance matrix
         # n = self.X.shape[0]
-        covX = spcovCV(self.X) if self.spX else np.cov(self.X.T)
+        covX = FTIRE.SpCov.spcovCV(self.X) if self.spX else np.cov(self.X.T)
         ## SVD
         if p == 1:
             self.B = np.ones((p,d))
@@ -89,7 +90,7 @@ class SIR:
         ## kernel matrix
         self.kernel()
         ## covariance matrix
-        covX = spcovCV(self.X) if self.spX else np.cov(self.X.T)
+        covX = FTIRE.SpCov.spcovCV(self.X) if self.spX else np.cov(self.X.T)
         ## SVD
         self.values, vectors = la.eigh(self.M, covX)
         ## Sequential Tests
