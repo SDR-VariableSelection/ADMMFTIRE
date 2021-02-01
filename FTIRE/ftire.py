@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jan 28 10:11:34 2021
+## Example
+import FTIRE
+from FTIRE import *
+X = genxy.generateX(100, 50, 0)
+y, d, q, b = genxy.generateY(X, 1)
+B = ftire.CV(X, y, d, 30, "ft")
 
-@author: jiayingweng
 """
 
 import numpy as np

@@ -1,0 +1,12 @@
+README.md
+setup.py
+ADMMFTIRE.egg-info/PKG-INFO
+ADMMFTIRE.egg-info/SOURCES.txt
+ADMMFTIRE.egg-info/dependency_links.txt
+ADMMFTIRE.egg-info/top_level.txt
+FTIRE/FT.py
+FTIRE/SIR.py
+FTIRE/SpCov.py
+FTIRE/__init__.py
+FTIRE/ftire.py
+FTIRE/genxy.py

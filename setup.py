@@ -4,8 +4,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="FTIRE-jweng", # Replace with your own username
-    version="0.1.4",
+    name="ADMMFTIRE", # Replace with your own username
+    version="0.0.1",
     author="Jiaying Weng",
     author_email="jweng@bentley.edu",
     description="An ADMM-FT-IRE package",
