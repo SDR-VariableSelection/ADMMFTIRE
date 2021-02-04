@@ -4,7 +4,7 @@ This is a ADMM-FTIRE package for the submitted paper "Sufficient Dimension Reduc
 
 # Installation
 
-pip install ADMMFTIRE
+pip install ADMMFTIRE==0.0.2
 
 # Example
 

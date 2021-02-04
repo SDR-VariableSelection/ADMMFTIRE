@@ -196,14 +196,14 @@ def CV(X, y, d, m, method="ft", nolamb = 50, nofold=10, NoB = 5, NoC = 20, NoW=2
         maximized loss 
     """
     ## par.
-    method = 'sir' # or 'ft'
-    nofold = 10
-    nolamb = 50
-    spX = False 
-    standard = False
-    NoB = 5
-    NoC = 20
-    NoW = 2
+    #method = 'sir' # or 'ft'
+    #nofold = 10
+    #nolamb = 50
+    #spX = False 
+    #standard = False
+    #NoB = 5
+    #NoC = 20
+    #NoW = 2
     
     ## generate lambda candidate
     lambmax = 1 #np.max(sdr0.M)/10

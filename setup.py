@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="ADMMFTIRE", # Replace with your own username
-    version="0.0.1",
+    version="0.0.2",
     author="Jiaying Weng",
     author_email="jweng@bentley.edu",
     description="An ADMM-FT-IRE package",

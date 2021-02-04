@@ -1,14 +1,30 @@
 Metadata-Version: 2.1
 Name: ADMMFTIRE
-Version: 0.0.1
+Version: 0.0.2
 Summary: An ADMM-FT-IRE package
 Home-page: https://github.com/338gaga/ADMM-FT
 Author: Jiaying Weng
 Author-email: jweng@bentley.edu
 License: UNKNOWN
-Description: 
+Description: # Description
         
         This is a ADMM-FTIRE package for the submitted paper "Sufficient Dimension Reduction in Ultrahigh Dimension with Fourier Transform".	
+        
+        # Installation
+        
+        pip install ADMMFTIRE
+        
+        # Example
+        
+        import FTIRE
+        
+        from FTIRE import *
+        
+        X = genxy.generateX(100, 50, 0)
+        
+        y, d, q, b = genxy.generateY(X, 1)
+        
+        B = ftire.CV(X, y, d, 30, "ft")
         
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
