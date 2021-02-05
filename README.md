@@ -1,6 +1,6 @@
 # Description
 
-This is a ADMM-FTIRE package for the submitted paper "Sufficient Dimension Reduction in Ultrahigh Dimension with Fourier Transform".	
+This is a ADMM-FTIRE package for the submitted paper "An Iterative ADMM Algorithm in Ultrahigh Dimensional Sufficient Dimension Reduction".	
 
 # Installation
 
