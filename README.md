@@ -4,7 +4,7 @@ This is a ADMM-FTIRE package for the submitted paper "An Iterative ADMM Algorith
 
 # Installation
 
-pip install ADMMFTIRE==0.0.2
+pip install ADMMFTIRE==0.0.3
 
 # Example
 

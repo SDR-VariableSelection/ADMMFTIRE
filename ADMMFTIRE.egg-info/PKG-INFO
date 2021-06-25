@@ -1,18 +1,18 @@
 Metadata-Version: 2.1
 Name: ADMMFTIRE
-Version: 0.0.2
-Summary: An ADMM-FT-IRE package
-Home-page: https://github.com/338gaga/ADMM-FT
+Version: 0.0.3
+Summary: An ADMMFTIRE package
+Home-page: https://github.com/SDR-VariableSelection/ADMMFTIRE
 Author: Jiaying Weng
 Author-email: jweng@bentley.edu
 License: UNKNOWN
 Description: # Description
         
-        This is a ADMM-FTIRE package for the submitted paper "Sufficient Dimension Reduction in Ultrahigh Dimension with Fourier Transform".	
+        This is a ADMM-FTIRE package for the submitted paper "An Iterative ADMM Algorithm in Ultrahigh Dimensional Sufficient Dimension Reduction".	
         
         # Installation
         
-        pip install ADMMFTIRE
+        pip install ADMMFTIRE==0.0.3
         
         # Example
         

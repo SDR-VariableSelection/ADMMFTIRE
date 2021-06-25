@@ -193,7 +193,7 @@ def CV(X, y, d, m, method="ft", nolamb = 50, nofold=10, NoB = 5, NoC = 20, NoW=2
         B: estimate
         covxx: covariance matrix of X
         lambcv: best lambda
-        maximized loss 
+        minimum loss 
     """
     ## par.
     #method = 'sir' # or 'ft'
@@ -243,5 +243,5 @@ def CV(X, y, d, m, method="ft", nolamb = 50, nofold=10, NoB = 5, NoC = 20, NoW=2
     l_mean = np.mean(cvloss, axis = 0)
     lambcv = lambseq[np.argmin(l_mean)]
     B, covxx, err= estimate(X, y, d, m, lambcv, method, NoB, NoC, NoW, spX, standard)
-    return B, covxx, lambcv, np.argmax(l_mean)
+    return B, covxx, lambcv, np.argmin(l_mean)
 

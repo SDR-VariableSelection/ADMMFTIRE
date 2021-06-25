@@ -73,7 +73,7 @@ class FT:
         if weighted is None:
             weighted = self.weighted
         n, p = self.X.shape
-        self.y = self.y.reshape(n,-1)
+        self.y = self.y.T.reshape(n,-1)
         q = self.y.shape[1]
         X0 = self.X - np.mean(self.X, axis = 0)
         if self.W is None:
